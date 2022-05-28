@@ -75,3 +75,4 @@ function Labyrinth() {
 
     document.getElementById('map').appendChild(this.destination);
 }
+
