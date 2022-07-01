@@ -15,12 +15,14 @@
             font-weight: bold;
         }
     </style>
+    <script>
+        function changetext(element, text){
+            element.innerHTML = text;
+        }
+    </script>
 </head>
 <body>
-<div id="mydiv">Hello world</div>
+<div id="mydiv" onmouseover="changetext(this, 'Can I help you?');"  onmouseout="changetext(this, 'Hello world!');">
+Hello world</div>
 </body>
-<script>
-    mydiv.addEventListener('mouseenter',()=>mydiv.innerText='Can I help you?');
-    mydiv.addEventListener('mouseleave',()=>mydiv.innerText='Hello World');
-</script>
 </html>

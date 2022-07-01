@@ -11,32 +11,33 @@
         }
     </style>
     <script>
-        function colourChangeClick() {
-            var color = this.style.backgroundColor;
+        /* TODO: write JS code here */
+        function changecolours() {
+            var bgcolor = this.style.backgroundColor;
             var newcolor;
-            switch (color) {
+            switch (bgcolor){
+                case "blue":
+                    newcolor = "red";
+                    break;
                 case "red":
                     newcolor = "green";
                     break;
                 case "green":
                     newcolor = "blue";
                     break;
-                case "blue":
-                    newcolor = "red";
-                    break;
                 default: 
                     newcolor = "blue;";
             }
             this.style.backgroundColor = newcolor;
+            
         }
 
-        function init() {
+        function start(){
             var mydiv = document.getElementById("mydiv");
             mydiv.style.backgroundColor = "blue";
-            mydiv.onclick = colourChangeClick;
+            mydiv.onclick=changecolours;
         }
-
-        window.onload = init;
+        window.onload =start;
     </script>
 </head>
 <body>

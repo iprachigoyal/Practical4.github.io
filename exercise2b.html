@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exercise #2: Changing colors</title>
+    <title>Exercise #2b: Randomizing initial color</title>
     <style>
         #mydiv {
             width: 200px;
@@ -11,26 +11,27 @@
         }
     </style>
     <script>
-        var colours = [ "orange", "black","cyan", "brown", "blue", "teal","green", "red", "pink", "yellow"];
-
-        function colourChangeClick() {
-            var color = this.style.backgroundColor;
-            var i = colours.indexOf(color);  
+        /* TODO: write JS code here */
+        var colors =["red", "pink", "yellow", "orange", "magenta", "green","lime", "blue", "purple", "brown"];
+        
+        function changecolours() {
+            var bgcolor = this.style.backgroundColor;
+            var i = colors.indexOf(bgcolor);
             i++; 
-            if (i == colours.length) {  
-                i = 0;
+            if (i == colors.length) {  
+                i = 0; // return to first colour
             }
-            this.style.backgroundColor = colours[i];
+            this.style.backgroundColor = colors[i];
+            
         }
 
-        function init() {
+        function start(){
             var mydiv = document.getElementById("mydiv");
-            var rnd = Math.floor((Math.random() * colours.length));  
-            mydiv.style.backgroundColor = colours[rnd];
-            mydiv.onclick = colourChangeClick;
+            var randindex = Math.floor(Math.random()* colors.length);
+            mydiv.style.backgroundColor = colors[randindex];
+            mydiv.onclick=changecolours;
         }
-
-        window.onload = init;
+        window.onload =start;
     </script>
 </head>
 <body>
